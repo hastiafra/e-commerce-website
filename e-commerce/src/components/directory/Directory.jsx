@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 
 import sections from "../../directory.data";
+import MenuItem from "../menuItem/MenuItem";
 
-const Directory = () =>{
-
-    
-    const [sectionsData, setSectionsData] = useState(sections)
-    
-    console.log(sectionsData)
-
-    return(
-        <div>
-          hi
-        </div>
-    )
+const Directory = () => {
 
 
-}
+  return (
+    <>
+      {sections.map(({ title, imageUrl, id }) => {
+       return( <MenuItem key={id} title={title} imageUrl={imageUrl}/>);
+      })}
+    </>
+  );
+};
 
 export default Directory;
