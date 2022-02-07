@@ -1,4 +1,5 @@
 import React from "react";
+import menuStyle from "./menuStyle.scss"
 
 const MenuItem = ({ title }) => {
   return (
@@ -6,8 +7,8 @@ const MenuItem = ({ title }) => {
       <div className="content">
         <h1 className="title">
           {title}
-          <span className="subtitle">Shop Now</span>
         </h1>
+          <span className="subtitle">Shop Now</span>
       </div>
     </div>
   );
