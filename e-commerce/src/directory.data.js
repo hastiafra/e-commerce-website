@@ -15,13 +15,13 @@ export const sliderItems = [
   },
   {
       id: 3,
-      imageUrl: "https://images.pexels.com/photos/928060/pexels-photo-928060.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      imageUrl: "https://images.pexels.com/photos/9399679/pexels-photo-9399679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "#FCF7FC",
   },
   {
     id: 4,
-    imageUrl: "https://images.pexels.com/photos/4065791/pexels-photo-4065791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    imageUrl: "https://images.pexels.com/photos/6784755/pexels-photo-6784755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "#FCF7FC",
 },

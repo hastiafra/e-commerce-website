@@ -1,0 +1,30 @@
+.arrowRight{
+    color: #e9e7e7;
+    position: absolute;
+    top: 50vh;
+    z-index: 99;
+    left:83vw;
+    cursor: pointer;
+
+}
+
+.arrowLeft{
+    color: #e9e7e7;
+    position: absolute;
+    top: 50vh;
+    z-index: 99;
+    cursor: pointer;
+}
+
+
+.wrapper{
+    position: relative;
+}
+
+.bannerImg{
+    max-width: 100%;
+    border-radius: 5px;
+    max-height: 100vh;
+
+
+}

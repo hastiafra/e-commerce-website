@@ -1,6 +1,12 @@
-.homePage {
+.menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 80px;
+  }
+
+  .slideWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
