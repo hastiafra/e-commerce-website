@@ -7,7 +7,7 @@ import {
 
 import sliderStyle from "./sliderStyle.scss";
 
-import { sliderItems } from "../../directory.data";
+import { sliderItems } from "../../data/directory.data";
 
 const Slider = () => {
   const [slideImg, setSlideImg] = useState(0);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import sections from "../../directory.data";
+import sections from "../../data/directory.data";
 import MenuItem from "../menuItem/MenuItem";
 
 import directoryStyle from "./directoryStyle.scss";
