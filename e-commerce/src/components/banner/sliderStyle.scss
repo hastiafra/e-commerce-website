@@ -48,3 +48,13 @@
   transition-duration: 1s;
   transform: scale(1.06);
 }
+
+
+@media only screen and (max-width:900px) {
+  .iconRight{
+    display: none;
+  }
+  .iconLeft{
+    display:none;
+  }
+}

@@ -11,29 +11,31 @@ import { sliderItems } from "../../directory.data";
 
 const Slider = () => {
   const [slideImg, setSlideImg] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
 
   const autoPlay = () => {
     setTimeout(() => {
-      
-        setSlideImg(slideImg === sliderItems.length - 1 ? 0 : slideImg + 1);
-    
+      setSlideImg(slideImg === sliderItems.length - 1 ? 0 : slideImg + 1);
     }, 3000);
   };
 
-  
-  useEffect(()=>{
-      autoPlay()
-      return(
-          clearTimeout()
-      )
-  },[slideImg])
+  const getScreenWidth = () => {
+    setWidth(window.innerWidth)
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", getScreenWidth);
+    if (width < 900) {
+      autoPlay();
+    }
+    return () => window.removeEventListener("resize", getScreenWidth);
+  });
 
   const nextSlide = () => {
     setSlideImg(slideImg === sliderItems.length - 1 ? 0 : slideImg + 1);
   };
 
   const previousSlide = () => {
-
     setSlideImg(slideImg === 0 ? sliderItems.length - 1 : slideImg - 1);
   };
 
