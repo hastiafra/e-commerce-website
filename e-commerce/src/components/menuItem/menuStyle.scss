@@ -18,12 +18,13 @@
 
     & .content {
       transform: transform ease;
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(0, 0, 0, 0.7);
     }
     & span.subtitle {
       transition: 1s ease-in;
       opacity: 1;
       font-size: 18px;
+      color:white;
     }
   }
 
@@ -57,15 +58,15 @@
     position: absolute;
     border-radius: 5px;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(91, 91, 91, 0.5);
 
     .title {
       font-weight: bold;
       margin-bottom: 6px;
       font-size: 25px;
-      color: #000000;
+      color: #ffffff;
       text-transform: uppercase;
-      text-shadow: 2px 2px 5px rgb(122, 121, 121);
+     
     }
 
     .subtitle {
