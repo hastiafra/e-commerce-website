@@ -42,7 +42,7 @@ const Slider = () => {
   return (
     <>
       <div className="arrowRight" direction="right" onClick={nextSlide}>
-        <IoIosArrowDroprightCircle className="iconRight" fontSize="60px" />
+        <IoIosArrowDroprightCircle className="iconRight" fontSize="60px" style={{ stroke: "gray", strokeWidth: "10"}}/>
       </div>
 
       {sliderItems.map(({ imageUrl, id }, index) => {
@@ -64,6 +64,7 @@ const Slider = () => {
         <IoIosArrowDropleftCircle
           fontSize="60px"
           className="iconLeft"
+          style={{ stroke: "gray", strokeWidth: "10"}}
           onClick={previousSlide}
         />
       </div>
