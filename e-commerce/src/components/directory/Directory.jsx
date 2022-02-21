@@ -8,9 +8,10 @@ import directoryStyle from "./directoryStyle.scss";
 const Directory = () => {
   return (
     <div className="directoryMenu">
-      {sections.map(({ title, imageUrl, id, size }) => {
+      {sections.map(({ title, imageUrl, id, size}) => {
         return (
           <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+        
         );
       })}
     </div>

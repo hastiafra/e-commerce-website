@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Collection from "../../components/collection/Collection";
 
-const Shop = () =>{
+const Shop = () => {
 
-    return(<h1>shop</h1>
-    )
-}
+    const { titleId } = useParams();
+
+  return (
+    <>
+      <Collection titleId={titleId} />
+    </>
+  );
+};
 
 export default Shop;
-

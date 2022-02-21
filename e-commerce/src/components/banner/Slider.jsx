@@ -47,10 +47,9 @@ const Slider = () => {
 
       {sliderItems.map(({ imageUrl, id }, index) => {
         return (
-          <div className={index === slideImg ? "activeSlide" : "slide"}>
+          <div  key={id} className={index === slideImg ? "activeSlide" : "slide"}>
             {index === slideImg && (
               <img
-                key={id}
                 src={imageUrl}
                 alt="fashion image"
                 className="bannerImg"
