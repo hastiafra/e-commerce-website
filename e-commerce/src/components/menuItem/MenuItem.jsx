@@ -1,19 +1,17 @@
 import React from "react";
 import Collection from "../collection/Collection";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import menuStyle from "./menuStyle.scss"
 
 const MenuItem = ({ title,imageUrl, size}) => {
 
- 
+let navigate = useNavigate();
 
 const seeDetail = (itemTitle) =>{
-   console.log(itemTitle)
-
-  // titleId === itemTitle
-
-  // console.log(titleId)
+  
+  navigate(`/shop/${itemTitle}`);
+  
 }
 
 

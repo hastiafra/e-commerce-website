@@ -6,6 +6,8 @@ const Shop = () => {
 
     const { titleId } = useParams();
 
+    console.log(titleId)
+
   return (
     <>
       <Collection titleId={titleId} />
