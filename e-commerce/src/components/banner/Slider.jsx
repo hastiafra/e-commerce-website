@@ -9,6 +9,8 @@ import sliderStyle from "./sliderStyle.scss";
 
 import { sliderItems } from "../../data/directory.data";
 
+import logo from "../../assets/coolLogo.jpg"
+
 const Slider = () => {
   const [slideImg, setSlideImg] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
@@ -41,6 +43,7 @@ const Slider = () => {
 
   return (
     <>
+    <img className="logo" src={logo} alt="logo" />
       <div className="arrowRight" direction="right" onClick={nextSlide}>
         <IoIosArrowDroprightCircle className="iconRight" fontSize="60px" style={{ stroke: "gray", strokeWidth: "10"}}/>
       </div>
