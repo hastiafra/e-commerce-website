@@ -1,12 +1,13 @@
 import React from "react";
-import collectionStyle from "./collectionStyle.scss"
+import collectionStyle from "./collectionStyle.scss";
 const Collection = ({ name, imageUrl, price }) => {
-
   return (
     <div className="wrapperCollection">
-      <h1>{name}</h1>
       <img className="img" src={imageUrl}></img>
-      <h4>Price: {price}</h4>
+      <div className="containerCollection">
+        <h2>{name}</h2>
+        <h4>Price: ${price}</h4>
+      </div>
     </div>
   );
 };
