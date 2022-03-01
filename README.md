@@ -1,3 +1,3 @@
 # e-commerce-website
 
-React function base ecommerce website with Sass styling 
+React function base e-commerce website with Sass styling, react bootstrap, 
