@@ -4,6 +4,8 @@ import signInStyle from "./signInStyle.scss";
 const SignIn = () => {
   const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
 
+  
+
   const signInSubmit = (e) => {
     e.preventDefault();
     setLoginInfo({ email: "", password: "" });
@@ -22,16 +24,18 @@ const SignIn = () => {
       <span>Sign In with your email and password</span>
 
       <form onSubmit={signInSubmit} className="signInForm">
-        <label htmlFor="email">Email</label>
+        <label className="emailLabel">Email</label>
         <input
+          className="currentEmail"
           type="email"
           value={loginInfo.email || ""}
           name="email"
           onChange={getInfo}
           required
         />
-        <label htmlFor="password">Password</label>
+        <label className="passLabel">Password</label>
         <input
+        className="currentPass"
           type="password"
           value={loginInfo.password || ""}
           name="password"

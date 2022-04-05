@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = () => {
   return (
-    <div>
+    <>
       <Navbar
         className="sticky headerMenu"
         fixed="top"
@@ -39,7 +39,7 @@ const Header = () => {
                 <NavDropdown.Item href="/shop/men">Men</NavDropdown.Item>
                 <NavDropdown.Item href="/shop/women">Women</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#deets">More deets</Nav.Link>
+              <Nav.Link href="/signIn">Sign In</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
                 Dank memes
               </Nav.Link>
@@ -48,7 +48,7 @@ const Header = () => {
         </Container>
       </Navbar>
      
-    </div>
+    </>
   );
 };
 export default Header;

@@ -1,13 +1,56 @@
-.signInForm{
-    display:flex;
-    flex-direction: column;
-    width:50vw;
-    align-items: center;
+@mixin shrinkLabel {
+  top: -14px;
+  font-size: 12px;
+  color: black;
+}
 
-    label{
-        padding:5px 0px;
-    }
-    button{
-        margin-top: 10px;
-    }
+.signInForm {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  align-items: center;
+  position: relative;
+
+  // label{
+  //     padding:5px 0px;
+  //     color: gray;
+  //     font-size: 16px;
+  //     font-weight: normal;
+  //     pointer-events: none;
+
+  //     transition: 300ms ease all;
+  // }
+
+  .emailLabel {
+    position: absolute;
+    top: 10px;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid gray;
+    margin: 25px 0;
+    padding: 10px 10px 10px 5px;
+    color: gray;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .currentEmail:focus > .emailLabel {
+    position: absolute;
+    top: -14px;
+    @include shrinkLabel();
+  }
+
+  .currentPass:focus ~ .passLabel {
+    position: absolute;
+    top: -14px;
+    @include shrinkLabel();
+  }
+
+  button {
+    margin-top: 10px;
+  }
 }
