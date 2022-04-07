@@ -26,16 +26,19 @@ provider.setCustomParameters({
 });
 
 export const auth = getAuth();
+
 export const signInWithGooglePopup = () => {
   return signInWithPopup(auth, provider);
 };
+
+export const signInWithGoogleRedirect = () =>
+  signInWithRedirect(auth, provider);
 
 export const db = getFirestore();
 
 export const createUserDocFromAuth = async (userAuth) => {
   const userDocRef = doc(db, "users", userAuth.uid);
 
-  console.log(userDocRef);
 
   const userSnapshot = await getDoc(userDocRef);
 
@@ -44,11 +47,11 @@ export const createUserDocFromAuth = async (userAuth) => {
     const createdAt = new Date();
 
     try {
-      await setDoc(userDocRef, {displayName, email,createdAt});
-    } catch(err) {
-        console.log("error creating the user", err.message);
+      await setDoc(userDocRef, { displayName, email, createdAt });
+    } catch (err) {
+      console.log("error creating the user", err.message);
     }
   }
 
-  return userDocRef
+  return userDocRef;
 };
