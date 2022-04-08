@@ -1,0 +1,20 @@
+.signUpWrapper {
+  max-width: 50%;
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+
+ h2{
+     text-align: left;
+     font-size: medium;
+     padding: 15px 0px;
+     max-width: 25%;
+ }
+}
+
+  
+@media only screen and (max-width:800px) {
+    .signUpWrapper{
+      min-width: 100%;
+    } 
+   }

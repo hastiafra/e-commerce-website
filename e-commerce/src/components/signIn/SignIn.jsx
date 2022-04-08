@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import signInStyle from "./signInStyle.scss";
 
+//sign in with google
+import {
+  signInWithGooglePopup,
+  createUserDocFromAuth,
+} from "../../utils/firebase/firebase.utils";
 
 const SignIn = () => {
   const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
 
-  
+  const [inputField, setInputField] = useState(false);
+
+  const logGoogleUser = async () => {
+    const { user } = await signInWithGooglePopup();
+
+    const userDocRef = await createUserDocFromAuth(user);
+  };
 
   const signInSubmit = (e) => {
     e.preventDefault();
@@ -14,10 +25,14 @@ const SignIn = () => {
 
   const getInfo = (e) => {
     const { name, value } = e.target;
-    setLoginInfo(prevState => ({...prevState, [name]: value}))
-  };
+    setLoginInfo((prevState) => ({ ...prevState, [name]: value }));
 
-  
+    if (value.length > 0) {
+      setInputField(true);
+    } else {
+      setInputField(false);
+    }
+  };
 
   return (
     <div className="signInContainer">
@@ -25,25 +40,32 @@ const SignIn = () => {
       <span>Sign In with your email and password</span>
 
       <form onSubmit={signInSubmit} className="signInForm">
-        <label className="emailLabel">Email</label>
-        <input
-          className="currentEmail"
-          type="email"
-          value={loginInfo.email || ""}
-          name="email"
-          onChange={getInfo}
-          required
-        />
+        <div className="inputContainer">
+          <label className="emailLabel">Email</label>
+          <input
+            className="currentEmail"
+            type="email"
+            value={loginInfo.email || ""}
+            name="email"
+            onChange={getInfo}
+            required
+          />
+        </div>
+        <div className="inputContainer">
         <label className="passLabel">Password</label>
         <input
-        className="currentPass"
+          className="currentPass"
           type="password"
           value={loginInfo.password || ""}
           name="password"
           onChange={getInfo}
           required
         />
-        <button type="submit">Login</button>
+        </div>
+        <div className="btnHolder">
+          <button type="submit">Login</button>
+          <button onClick={logGoogleUser}>Sign in with Google</button>
+        </div>
       </form>
     </div>
   );

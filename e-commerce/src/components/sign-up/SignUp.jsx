@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import signUpStyle from "./signUpStyle.scss"
 
 //firebase Auth
 import {
@@ -56,7 +57,7 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="wrapper">
+      <div className="signUpWrapper">
         <h2>New User</h2>
         <h1>Sign up with your email and password</h1>
 

@@ -1,9 +1,9 @@
-
-
-
-.signInUpWrapper{
-margin-top: 100px;
-display: flex;
+.signInUpWrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+  max-width: 100vw;
+  overflow: hidden;
 }
-
-

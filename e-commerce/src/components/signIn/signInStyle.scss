@@ -4,6 +4,42 @@
   color: black;
 }
 
+.signInContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  max-width: 50%;
+  text-align: center;
+
+  h2 {
+    margin: 20px 0px;
+  }
+
+  span {
+    margin: 20px 0px;
+  }
+}
+
+.btnHolder {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+
+  button {
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
+  }
+
+  button:hover {
+    background-color: black;
+    color: white;
+
+    transition: 1s ease;
+  }
+}
+
 .signInForm {
   display: flex;
   flex-direction: column;
@@ -21,15 +57,19 @@
   //     transition: 300ms ease all;
   // }
 
-  .emailLabel {
-    position: absolute;
-    top: 10px;
+  // .emailLabel {
+  //   position: absolute;
+  //   top: 10px;
+  // }
+
+  label {
+    margin-top: 30px;
+    font-weight: bold;
   }
 
   input {
     border: none;
     border-bottom: 1px solid gray;
-    margin: 25px 0;
     padding: 10px 10px 10px 5px;
     color: gray;
   }
@@ -38,19 +78,64 @@
     outline: none;
   }
 
-  .currentEmail:focus > .emailLabel {
-    position: absolute;
-    top: -14px;
-    @include shrinkLabel();
+  // .currentEmail:hover {
+
+  //   .emailLabel{background-color: red;}
+
+  // }
+
+  
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    label{
+      padding:10px;
+      border-radius: 10px;
+    }
+    &:focus-within {
+      label {
+        font-size: 20px;
+        margin-top: 10px;
+        color: rgb(126, 73, 155);
+        transition: 1ms ease;
+      }
+    }
   }
 
-  .currentPass:focus ~ .passLabel {
-    position: absolute;
-    top: -14px;
-    @include shrinkLabel();
-  }
+  // .currentEmail:focus > .emailLabel {
+  //   position: absolute;
+  //   top: -14px;
+  //   @include shrinkLabel();
+  // }
+
+  // .currentPass:focus ~ .passLabel {
+  //   position: absolute;
+  //   top: -14px;
+  //   @include shrinkLabel();
+  // }
 
   button {
     margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .signInContainer {
+    max-width: 100%;
+  }
+
+  .btnHolder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+
+    button {
+      margin: 15px;
+      border-radius: 5px;
+      padding: 5px 20px;
+      font-size: small;
+    }
   }
 }
