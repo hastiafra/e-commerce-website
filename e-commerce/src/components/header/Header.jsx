@@ -39,7 +39,7 @@ const Header = () => {
                 <NavDropdown.Item href="/shop/men">Men</NavDropdown.Item>
                 <NavDropdown.Item href="/shop/women">Women</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="/signIn">Sign In</Nav.Link>
+              <Nav.Link href="/auth">Sign In</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
                 Dank memes
               </Nav.Link>

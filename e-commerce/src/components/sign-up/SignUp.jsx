@@ -32,6 +32,7 @@ const SignUp = () => {
 
   const { displayName, email, password, confirmPassword } = signUpForm;
   const handleSubmit = async (ev) => {
+    
     ev.preventDefault();
 
     try {

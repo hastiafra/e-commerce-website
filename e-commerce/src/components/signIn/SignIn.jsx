@@ -5,12 +5,11 @@ import signInStyle from "./signInStyle.scss";
 import {
   signInWithGooglePopup,
   createUserDocFromAuth,
+  signInUser,
 } from "../../utils/firebase/firebase.utils";
 
 const SignIn = () => {
   const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
-
- 
 
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
@@ -18,15 +17,28 @@ const SignIn = () => {
     const userDocRef = await createUserDocFromAuth(user);
   };
 
-  const signInSubmit = (e) => {
+  const signInSubmit = async (e) => {
     e.preventDefault();
+
     setLoginInfo({ email: "", password: "" });
+
+    try {
+      const response = await signInUser(loginInfo.email, loginInfo.password);
+      console.log(response);
+    } catch (err) {
+      if (err.code === "auth/wrong-password") {
+        alert("Incorrect Password");
+      } else if (err.code === "auth/user-not-found") {
+        alert("You haven't registered yet");
+      } else {
+        console.log("there is an error", err);
+      }
+    }
   };
 
   const getInfo = (e) => {
     const { name, value } = e.target;
     setLoginInfo((prevState) => ({ ...prevState, [name]: value }));
-
   };
 
   return (
@@ -47,19 +59,21 @@ const SignIn = () => {
           />
         </div>
         <div className="inputContainer">
-        <label>Password</label>
-        <input
-          className="currentPass"
-          type="password"
-          value={loginInfo.password || ""}
-          name="password"
-          onChange={getInfo}
-          required
-        />
+          <label>Password</label>
+          <input
+            className="currentPass"
+            type="password"
+            value={loginInfo.password || ""}
+            name="password"
+            onChange={getInfo}
+            required
+          />
         </div>
         <div className="btnHolder">
           <button type="submit">Login</button>
-          <button className="googleBtn" onClick={logGoogleUser}>Sign in with Google</button>
+          <button type="button" className="googleBtn" onClick={logGoogleUser}>
+            Sign in with Google
+          </button>
         </div>
       </form>
     </div>
