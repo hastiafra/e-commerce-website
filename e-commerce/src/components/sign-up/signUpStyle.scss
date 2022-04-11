@@ -1,20 +1,87 @@
 .signUpWrapper {
   max-width: 50%;
- text-align: center;
- display: flex;
- flex-direction: column;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
 
- h2{
-     text-align: left;
-     font-size: medium;
-     padding: 15px 0px;
-     max-width: 25%;
- }
+  span {
+    margin-right: auto;
+    padding-top: 20px;
+    padding-left: 30px;
+
+    h3 {
+      font-size: medium;
+      color: rgb(151, 131, 172);
+    }
+  }
+
+  h2 {
+    padding: 10px;
+  }
 }
 
-  
-@media only screen and (max-width:800px) {
-    .signUpWrapper{
-      min-width: 100%;
-    } 
-   }
+@media only screen and (max-width: 800px) {
+  .signUpWrapper {
+    min-width: 100%;
+  }
+}
+
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;
+
+  label {
+    margin-top: 30px;
+    font-weight: bold;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 10px 10px 10px 5px;
+    color: gray;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    label {
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    &:focus-within {
+      label {
+        font-size: 20px;
+        color: rgb(151, 131, 172);
+        transition: 0.5s ease;
+      }
+    }
+  }
+
+  button {
+    margin: 30px;
+    border-radius: 15px;
+    padding: 10px 20px;
+  }
+
+  button:hover {
+    background-color: black;
+    color: white;
+
+    transition: 1s ease;
+  }
+}
+
+

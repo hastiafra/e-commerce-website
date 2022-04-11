@@ -10,7 +10,7 @@ import {
 const SignIn = () => {
   const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
 
-  const [inputField, setInputField] = useState(false);
+ 
 
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
@@ -27,11 +27,6 @@ const SignIn = () => {
     const { name, value } = e.target;
     setLoginInfo((prevState) => ({ ...prevState, [name]: value }));
 
-    if (value.length > 0) {
-      setInputField(true);
-    } else {
-      setInputField(false);
-    }
   };
 
   return (
@@ -41,7 +36,7 @@ const SignIn = () => {
 
       <form onSubmit={signInSubmit} className="signInForm">
         <div className="inputContainer">
-          <label className="emailLabel">Email</label>
+          <label>Email</label>
           <input
             className="currentEmail"
             type="email"
@@ -52,7 +47,7 @@ const SignIn = () => {
           />
         </div>
         <div className="inputContainer">
-        <label className="passLabel">Password</label>
+        <label>Password</label>
         <input
           className="currentPass"
           type="password"
@@ -64,7 +59,7 @@ const SignIn = () => {
         </div>
         <div className="btnHolder">
           <button type="submit">Login</button>
-          <button onClick={logGoogleUser}>Sign in with Google</button>
+          <button className="googleBtn" onClick={logGoogleUser}>Sign in with Google</button>
         </div>
       </form>
     </div>
