@@ -1,0 +1,17 @@
+.cartIconWrapper {
+  position: relative;
+  cursor: pointer;
+
+  .cardIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  p {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    top: 12px;
+    left: 7px;
+  }
+}

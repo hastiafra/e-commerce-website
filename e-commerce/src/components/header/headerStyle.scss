@@ -1,9 +1,4 @@
-.headerMenu {
-  background-color: rgba(255, 255, 255, 0.6);
-  Nav.Link {
-    padding-right: 20px;
-  }
-}
+
 
 .headerLogo {
   width: 100px;
@@ -16,4 +11,8 @@
   text-align: center;
 }
 
-
+.navbar-nav{
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}

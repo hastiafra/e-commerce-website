@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
+import CartIcon from "../cart-icon/CartIcon";
+
 const Header = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
@@ -20,7 +22,7 @@ const Header = () => {
         bg="light"
         variant="light"
       >
-        <Container>
+        <Container className="navContainer">
           <Navbar.Brand href="/">
             <img className="headerLogo" src={logo} alt="e-commerce logo" />
           </Navbar.Brand>
@@ -46,7 +48,7 @@ const Header = () => {
                 <Nav.Link href="/auth">Sign In</Nav.Link>
               )}
               <Nav.Link eventKey={2} href="#memes">
-                Dank memes
+                <CartIcon />
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
