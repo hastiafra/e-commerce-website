@@ -1,5 +1,8 @@
 .headerMenu {
   background-color: rgba(255, 255, 255, 0.6);
+  Nav.Link {
+    padding-right: 20px;
+  }
 }
 
 .headerLogo {
@@ -8,7 +11,9 @@
   padding: 0px;
 }
 
-.dropDownItem{
-    align-items: center;
-    text-align: center;
+.dropDownItem {
+  align-items: center;
+  text-align: center;
 }
+
+

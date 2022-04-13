@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import signUpStyle from "./signUpStyle.scss";
 
+
 //firebase Auth
 import {
   createUserManually,
@@ -18,8 +19,6 @@ const SignUp = () => {
 
   const [signUpForm, setSignUpForm] = useState(newUserInfo);
 
-  console.log(signUpForm);
-
   const resetForm = () => {
     setSignUpForm(newUserInfo);
   };
@@ -31,23 +30,24 @@ const SignUp = () => {
   };
 
   const { displayName, email, password, confirmPassword } = signUpForm;
+
   const handleSubmit = async (ev) => {
-    
     ev.preventDefault();
 
     try {
       if (password === confirmPassword) {
         const { user } = await createUserManually(email, password);
 
-        const userDocRef = await createUserDocFromAuth(user, { displayName });
+        await createUserDocFromAuth(user, { displayName });
 
         resetForm();
       }
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Email already exist");
+      } else {
+        console.log("user creation encounter error", error);
       }
-      console.log("user creation encounter error", error);
     }
   };
 

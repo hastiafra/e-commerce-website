@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import signInStyle from "./signInStyle.scss";
 
 //sign in with google
@@ -13,18 +13,15 @@ const SignIn = () => {
 
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
-
-    const userDocRef = await createUserDocFromAuth(user);
   };
 
   const signInSubmit = async (e) => {
     e.preventDefault();
 
-    setLoginInfo({ email: "", password: "" });
-
     try {
-      const response = await signInUser(loginInfo.email, loginInfo.password);
-      console.log(response);
+      await signInUser(loginInfo.email, loginInfo.password);
+
+      setLoginInfo({ email: "", password: "" });
     } catch (err) {
       if (err.code === "auth/wrong-password") {
         alert("Incorrect Password");

@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import headerStyle from "./headerStyle.scss";
 import logo from "../../assets/RemovedbgLogo.png";
 import Dropdown from "react-bootstrap/Dropdown";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Container, Navbar, NavDropdown, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { UserContext } from "../../contexts/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const Header = () => {
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+
   return (
     <>
       <Navbar
@@ -23,11 +27,8 @@ const Header = () => {
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-
             <Nav className="ms-auto">
-
               <NavDropdown title="Shop" id="collasible-nav-dropdown">
-                  
                 <NavDropdown.Item href="/shop/hats">Hats</NavDropdown.Item>
 
                 <NavDropdown.Item href="/shop/sneakers">
@@ -39,7 +40,11 @@ const Header = () => {
                 <NavDropdown.Item href="/shop/men">Men</NavDropdown.Item>
                 <NavDropdown.Item href="/shop/women">Women</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="/auth">Sign In</Nav.Link>
+              {currentUser ? (
+                <Nav.Link onClick={signOutUser}>Sign Out</Nav.Link>
+              ) : (
+                <Nav.Link href="/auth">Sign In</Nav.Link>
+              )}
               <Nav.Link eventKey={2} href="#memes">
                 Dank memes
               </Nav.Link>
@@ -47,7 +52,6 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-     
     </>
   );
 };
