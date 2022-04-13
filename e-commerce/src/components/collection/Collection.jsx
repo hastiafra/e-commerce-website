@@ -5,9 +5,10 @@ const Collection = ({ name, imageUrl, price }) => {
     <div className="wrapperCollection">
       <img className="img" src={imageUrl}></img>
       <div className="containerCollection">
-        <h2>{name}</h2>
+        <h3>{name}</h3>
         <h4>Price: ${price}</h4>
       </div>
+      <button>Add to Card</button>
     </div>
   );
 };
