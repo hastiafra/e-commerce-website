@@ -1,9 +1,13 @@
 import "./cartDropDown.styles.scss";
+import { useContext } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import CartItems from "../cart-Items/CartItems";
+import { CartContext } from "../../contexts/cartItems.context";
 
 const CartDropDown = ({ setShow, show }) => {
+  const handleClose = () => setShow(false);
 
- const handleClose = () => setShow(false);
+  const {cartItems} = useContext(CartContext)
 
 
   return (
@@ -13,9 +17,9 @@ const CartDropDown = ({ setShow, show }) => {
           <Offcanvas.Title>Your Shopping List</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="cartItems">
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
-
+          {cartItems.map((item)=>{
+            <CartItems key={item.id}cartItem={item}/>
+          })}
           <button className="checkOutBtn">Check Out</button>
         </Offcanvas.Body>
       </Offcanvas>
