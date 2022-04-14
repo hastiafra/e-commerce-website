@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import headerStyle from "./headerStyle.scss";
+import "./headerStyle.scss";
 import logo from "../../assets/RemovedbgLogo.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Container, Navbar, NavDropdown, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
-
 import CartIcon from "../cart-icon/CartIcon";
 
 const Header = () => {
