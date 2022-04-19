@@ -1,22 +1,18 @@
-import "./cartItems.style.scss"
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cartItems.context";
+import "./cartItems.style.scss";
+
+const CartItems = ({ item }) => {
 
 
+  return (
+    <div className="addedProductWrapper">
+      <img src={item.itemImg} className="cartImg" alt={item.itemName} />
 
-const CartItems = () =>{
+      <div className="detailProduct">
+        <p> Item Name: {item.itemName}</p>
+        <p> Price: ${item.itemPrice} x {item.itemQuantity} </p>
+      </div>
+    </div>
+  );
+};
 
-const {cartItems} = useContext(CartContext);
-
-
-
-console.log(cartItems)
-    return(
-        <div>
-            yourshopping
-        </div>
-    )
-}
-
-
-export default CartItems; 
+export default CartItems;

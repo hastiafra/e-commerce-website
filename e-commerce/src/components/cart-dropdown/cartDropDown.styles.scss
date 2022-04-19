@@ -18,32 +18,40 @@
     overflow: scroll;
   }
 
-  button{
+  button {
     margin-top: auto;
   }
 }
 
-.cartItems{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
 }
-.checkOutBtn{
-    margin:30px 10px 10px 10px ;
-    display: block;
-    border-radius: 10px;
-    padding:10px 30px;
-    font-weight: bold;
 
-    &:hover{
-        transition: 0.5s ease;
-        background-color: black;
-        color:white;
-    }
-    &:active{
-        transition: 0.5s ease;
-       transform: scale(0.9);
-      }
+.checkOutBtn {
+  margin: 30px 10px 10px 10px;
+  display: block;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-weight: bold;
+
+  &:hover {
+    transition: 0.5s ease;
+    background-color: black;
+    color: white;
+  }
+  &:active {
+    transition: 0.5s ease;
+    transform: scale(0.9);
+  }
+}
+
+.disabledBtn {
+  margin: 30px 10px 10px 10px;
+  display: block;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-weight: bold;
 }

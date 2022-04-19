@@ -1,0 +1,15 @@
+.addedProductWrapper {
+  display: flex;
+  background-color: rgb(242, 240, 255);
+
+  .cartImg {
+    width: 100px;
+    padding: 10px;
+  }
+}
+
+.detailProduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
