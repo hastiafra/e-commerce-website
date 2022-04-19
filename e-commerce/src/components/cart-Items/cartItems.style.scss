@@ -1,10 +1,20 @@
 .addedProductWrapper {
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
-  background-color: rgb(242, 240, 255);
+  position: relative;
 
   .cartImg {
-    width: 100px;
     padding: 10px;
+    width: 100px;
+  }
+
+  .removeItemBtn{
+      position: absolute;
+      right: 10px;
+      background: none;
+      border:none;
+      font-weight: bold;
   }
 }
 
