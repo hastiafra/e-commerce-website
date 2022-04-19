@@ -9,6 +9,7 @@ const CartDropDown = ({ setShow, show }) => {
 
   const {cartItems} = useContext(CartContext)
 
+  console.log(cartItems)
 
   return (
     <>
@@ -17,9 +18,9 @@ const CartDropDown = ({ setShow, show }) => {
           <Offcanvas.Title>Your Shopping List</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="cartItems">
-          {cartItems.map((item)=>{
-            <CartItems key={item.id}cartItem={item}/>
-          })}
+          {/* {cartItems.map((item)=>{
+            <CartItems key={item.id} cartItem={item}/>
+          })} */}
           <button className="checkOutBtn">Check Out</button>
         </Offcanvas.Body>
       </Offcanvas>

@@ -27,6 +27,7 @@ const Shop = () => {
               name={name}
               imageUrl={imageUrl}
               price={price}
+              id={id}
             />
           );
         })}
