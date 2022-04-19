@@ -24,9 +24,9 @@ const Collection = ({ name, imageUrl, price, id }) => {
       ...cartItems,
       {
         itemId: id,
-        itemPrice: price,
-        itemName: name,
         itemImg: imageUrl,
+        itemName: name,
+        itemPrice: price,
         itemQuantity: 1,
       },
     ];
