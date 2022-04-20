@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/cartItems.context";
 
 const CartItems = ({ item }) => {
+    
   const { cartItems, setCartItems } = useContext(CartContext);
 
   const removeItem = () => {
@@ -17,6 +18,16 @@ const CartItems = ({ item }) => {
     let checkItemId = cartItems.find((cartItem) => {
       return cartItem.itemId === item.itemId;
     });
+
+    if (checkItemId) {
+      const newQuantity = cartItems.map((cartItem) => {
+        return cartItem.itemId === item.itemId
+          ? { ...cartItem, itemQuantity: cartItem.itemQuantity + 1 }
+          : cartItem;
+      });
+
+      setCartItems(newQuantity)
+    }
   };
 
   const decreaseQuantity = () => {
