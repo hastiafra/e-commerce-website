@@ -12,6 +12,38 @@ const CartItems = ({ item }) => {
 
     setCartItems(filteredId);
   };
+
+  const increaseQuantity = () => {
+    let checkItemId = cartItems.find((cartItem) => {
+      return cartItem.itemId === item.itemId;
+    });
+  };
+
+  const decreaseQuantity = () => {
+    let itemExist = cartItems.find((cartItem) => {
+      return cartItem.itemId === item.itemId;
+    });
+
+    if (itemExist.itemQuantity === 1) {
+      let filteredItem = cartItems.filter((cartItem) => {
+        return cartItem.itemId !== item.itemId;
+      });
+
+      setCartItems(filteredItem);
+    } else {
+      const newItem = cartItems.map((cartItem) => {
+        return cartItem.itemId === item.itemId
+          ? {
+              ...cartItem,
+              itemQuantity: cartItem.itemQuantity - 1,
+            }
+          : cartItem;
+      });
+
+      setCartItems(newItem);
+    }
+  };
+
   return (
     <div className="addedProductWrapper">
       <button onClick={removeItem} className="removeItemBtn">
@@ -24,9 +56,14 @@ const CartItems = ({ item }) => {
         <p>
           Price: ${item.itemPrice} x {item.itemQuantity}
         </p>
-
-        <button></button>
-        <button></button>
+      </div>
+      <div className="arrowControl">
+        <button className="incrementBtn" onClick={increaseQuantity}>
+          &#8710;
+        </button>
+        <button className="decrementBtn" onClick={decreaseQuantity}>
+          &#8711;
+        </button>
       </div>
     </div>
   );
